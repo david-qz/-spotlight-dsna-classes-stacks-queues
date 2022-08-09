@@ -1,4 +1,4 @@
-const { Stack } = require("./index.js");
+const { Stack, Queue } = require("./index.js");
 
 describe("Stack Class", () => {
 
@@ -23,4 +23,29 @@ describe("Stack Class", () => {
     expect(stack.count).toEqual(2);
     expect(stack.peek()).toEqual(2);
   });
+});
+
+describe("Queue Class", () => {
+
+  it('#enqueue should add an item to the back', () => {
+    const queue = new Queue();
+    queue.enqueue('fox');
+    queue.enqueue('goose')
+    expect(queue.count).toEqual(2);
+    expect(queue.next).toEqual('fox');
+  });
+
+  it('#dequeue should remove an item from the front and return it', () => {
+    const queue = new Queue();
+    queue.enqueue('fox');
+    queue.enqueue('goose')
+    expect(queue.count).toEqual(2);
+    expect(queue.dequeue()).toEqual('fox');
+    expect(queue.count).toEqual(1);
+    expect(queue.dequeue()).toEqual('goose');
+    expect(queue.count).toEqual(0);
+    expect(queue.dequeue()).toEqual(undefined);
+    expect(queue.count).toEqual(0);
+  });
+
 });

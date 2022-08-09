@@ -23,7 +23,27 @@ class Stack {
 }
 
 class Queue {
+    #list;
 
+    constructor(initialList = []) {
+        this.#list = initialList;
+    }
+
+    get count() {
+        return this.#list.length;
+    }
+
+    get next() {
+        return this.#list[0];
+    }
+
+    enqueue(item) {
+        this.#list.push(item);
+    }
+
+    dequeue() {
+        return this.#list.shift();
+    }
 }
 
 module.exports = { Stack, Queue };
