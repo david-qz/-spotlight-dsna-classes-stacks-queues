@@ -29,7 +29,7 @@ describe("Queue Class", () => {
     queue.enqueue(1)
     queue.enqueue(2)
     queue.enqueue(3)
-    expect(queue.list).toEqual([3, 2 ,1])
+    expect(queue.list).toEqual([1, 2, 3])
   })
 
   it('#denqueue should remove an item from the end of the array', () => {
@@ -38,7 +38,7 @@ describe("Queue Class", () => {
     queue.enqueue(2)
     queue.enqueue(3)
     expect(queue.dequeue()).toEqual(1)
-    expect(queue.list).toEqual([3, 2])
+    expect(queue.list).toEqual([2, 3])
   })
 
   it('#hasnext should return true or false if the list is greater than 0', () => {

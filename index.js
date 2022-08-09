@@ -31,11 +31,11 @@ class Queue {
     }
 
     enqueue(item) {
-        this.#list.unshift(item)
+        this.#list.push(item)
     }
 
     dequeue() {
-        return this.#list.pop() 
+        return this.#list.shift() 
     }
 
     hasNext() {
