@@ -34,12 +34,16 @@ class Queue {
         this.#list.unshift(item)
     }
 
-    deenqueue() {
+    dequeue() {
         return this.#list.pop() 
     }
 
     hasNext() {
         return this.#list.length > 0;
+    }
+
+    get list() {
+        return [...this.#list];
     }
 }
 
