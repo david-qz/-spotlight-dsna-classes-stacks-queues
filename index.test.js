@@ -38,7 +38,8 @@ describe("Queue Class", () => {
     queue.enqueue(2)
     queue.enqueue(3)
     expect(queue.dequeue()).toEqual(1)
-    expect(queue.list).toEqual([2, 3])
+    expect(queue.dequeue()).toEqual(2)
+    expect(queue.dequeue()).toEqual(3)
   })
 
   it('#hasnext should return true or false if the list is greater than 0', () => {

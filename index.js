@@ -25,17 +25,23 @@ class Stack {
 
 class Queue {
     #list;
+    #front;
 
     constructor(initalList = []) {
         this.#list = initalList
+        this.#front = 0
     }
 
     enqueue(item) {
         this.#list.push(item)
     }
 
+    // dequeue() {
+    //     return this.#list.shift() 
+    // }
+    
     dequeue() {
-        return this.#list.shift() 
+        return this.#list[this.#front++]
     }
 
     hasNext() {
